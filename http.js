@@ -66,7 +66,7 @@ const http = {
             },
             url: `${app.globalData.PubUrl}/Api/${params.api}?${params.params}`,
             data: params.data,
-            success: (res) => {
+            success: (res) {
                 if(!params.isCallBack){
                     //  如设置isCallBack为false 则结束回调逻辑
                     return console.log('isCallBack is false');
@@ -114,7 +114,7 @@ const http = {
                         break;
                 }
             },
-            fail: function (res) {
+            fail (res) {
                 if(!params.isCallBack){
                     return console.log('isCallBack is false');
                 }
@@ -126,7 +126,7 @@ const http = {
                     throw "fail callback function is undefined"
                 }
             },
-            complete(res) {
+            complete (res) {
                 wx.hideLoading();
                 if(!params.isCallBack){
                     return console.log('isCallBack is false');
